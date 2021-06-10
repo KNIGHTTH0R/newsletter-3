@@ -1,0 +1,368 @@
+/************* Exceptions and custom ******************/
+* {
+    margin: 0;
+    /* Clear default values to have a full-page look */
+}
+
+#admin-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #ffffff;
+
+}
+
+/*******************************************************/
+
+// Design - colors
+$background-color: #1f90ff;
+$main-section-background-color: linear-gradient(45deg, #ffff00, #1f90ff);
+$border-color: #fdfdfdc4;
+$color-light: #5281cc;
+$color-dark: #233759;
+$color-alert: #192944;
+$heading-font: Georgia;
+$paragraph-font: Arial;
+
+@mixin inputFieldShadow {
+    box-shadow: 0px 5px 50px #fdfdfdc4;
+}
+
+// Design - images
+$background-image: "img/blue-yellow-gradient-linear.png";
+$logo-image: "img/logo.png";
+$logo-image-full: "img/logo--text.png";
+$icon-success-image: "img/ic_success.png";
+$icon-arrow: "img/ic_arrow.svg";
+
+// Design - social icon colors, shadow and pointer style
+$social-icon-facebook-hover: #4267B2;
+$social-icon-facebook-active: #2F4A80;
+$social-icon-instagram-hover: #C13584;
+$social-icon-instagram-active: #8F2762;
+$social-icon-twitter-hover: #1DA1F2;
+$social-icon-twitter-active: #177FBF;
+$social-icon-youtube-hover: #FF0000;
+$social-icon-youtube-active: #CC0000;
+
+@mixin socialIconSelected {
+    box-shadow: 0px 20px 40px rgba(19, 24, 33, 0.3);
+    cursor: pointer;
+    svg {
+        fill: #FFFFFF;
+        fill-opacity: 1;
+    }
+}
+
+body {
+    background-color: $background-color;
+    background-image: url($background-image); 
+}
+
+a {
+    color: $color-dark;
+}
+
+a:hover {
+    color: $color-light;
+}
+
+a:active {
+    color: $color-dark;
+}
+
+h1.error-message {
+    text-align: center;
+    color: $color-dark;
+}
+
+#navigation {        // Contains logo and navigation links
+    display: flex;
+    justify-content: space-around;
+    margin: 2%;
+}
+
+#logo {
+    width: 170px;
+    height: 100px;
+    background-image: url($logo-image);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+}
+
+nav ul li {
+    align-self: center;
+}
+
+nav ul li a {
+    padding: 0 1rem;
+    font-family: Arial;
+    font-size: 1rem;
+    color: $color-dark;
+    text-decoration: none;
+}
+
+#content {        // Contains 3 vertical sections - header, app area and footer with social netw. icons
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#main-section {        // Main interactive area
+    width: 80%;
+    padding: 2% 0;
+    margin: 1%;
+    background-image: $main-section-background-color;
+    border: 2px solid $color-dark;
+}
+
+#info {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.success-image {
+    height: 5rem;
+    margin: 1%;
+    background-image: url($icon-success-image);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#title {
+    font-family: $heading-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 2.75rem;
+    color: $color-dark;
+}
+
+#description {
+    margin: 5% 0;
+    font-family: $paragraph-font;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 1.75rem;
+    color: $color-dark;
+}
+
+#notification {
+    margin: auto;
+    color: $color-alert;
+    text-align: center;
+}
+
+#form {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#form input[type=text] {
+    height: 2rem;
+    border: 1px solid $border-color;
+    width: 100%;
+    margin: 1%;
+    padding: 1%;
+    outline: none;
+    font-family: $paragraph-font;
+    font-style: normal;
+    font-size: 1rem;
+    color: $color-dark;
+}
+
+#form input[type=text]:hover {
+    @include inputFieldShadow();
+}
+
+#form input[type=text]:focus-within {
+    @include inputFieldShadow();
+}
+
+#form button {
+    height: 2rem;
+    border: 0;
+    cursor: pointer;
+}
+#form button:disabled {
+    cursor: not-allowed;
+}
+
+#terms-base {
+    margin: 5%;
+    font-family: $paragraph-font;
+    color: $color-dark;
+}
+
+#terms-base label {
+    vertical-align: super;
+}
+
+#form input[type=checkbox] {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+}
+
+#social-icons {
+    margin-top: 5%;
+}
+
+#social-icons-base {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+#social-icons-base div {        // Round frames for social icons
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem;
+    border-radius: 50%;
+}
+
+svg {
+    fill: $color-light;
+    fill-opacity: 0.4;
+}
+
+#social-icon-frame-fb:hover {
+    background: $social-icon-facebook-hover;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-fb:active {
+    background: $social-icon-facebook-active;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-ig:hover {
+    background: $social-icon-instagram-hover;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-ig:active {
+    background: $social-icon-instagram-active;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-tw:hover {
+    background: $social-icon-twitter-hover;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-tw:active {
+    background: $social-icon-twitter-active;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-yt:hover {
+    background: $social-icon-youtube-hover;
+    @include socialIconSelected();
+}
+
+#social-icon-frame-yt:active {
+    background: $social-icon-youtube-active;
+    @include socialIconSelected();
+}
+
+@media only screen and (min-width: 880px) {        // For smaller laptop and tablet screens
+
+    #logo {
+        background-image: url($logo-image);
+    }
+
+}
+// End of screen size for small laptops and tablets
+
+
+@media only screen and (min-width: 1200px) {        // For laptop and desktop
+
+    #logo {
+        background-image: url($logo-image-full);
+    }
+
+    #main-section {        // Main interactive area
+        width: 50%;
+        padding: 2% 0;
+        background-image: $main-section-background-color;
+        border: 2px solid $color-dark;
+    }
+
+    #form button {
+        width: 25%;
+    }
+
+}
+// End of screen size for laptop and desktop
+
+// Admin area
+main.admin {
+    display: initial;
+    width: 100%;
+    height: auto;
+    padding-bottom: 5%;
+}
+
+a.admin {
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.admin-controls {
+    width: 50%;
+    margin: auto;
+    padding: 0.5%;
+    text-align: center;
+}
+
+.admin-filter-enabled {
+    border: 1.5px solid red;
+}
+
+.admin-controls button {
+    padding: 5px;
+    cursor: pointer;
+}
+
+table.admin {
+    border: none;
+    margin: auto;
+}
+
+tr.admin {
+    background: linear-gradient(to right, #4776E6, #8E54E9);
+}
+
+td.admin {
+    color: white;
+    border: none;
+    padding: 10px 2px;
+}
+
+th.admin {
+    color: gold;
+    padding: 1rem;
+    border: none;
+}
+// End of admin area
