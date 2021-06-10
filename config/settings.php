@@ -1,6 +1,6 @@
 <?php
 
-$homeDir = '/';        // Home directory. Examples: '/', '/home', '/welcome'
+$homeDir = '/';        // Home directory. Examples: '/', '/newsletter', '/welcome'
 $title = 'Welcome';
 $isProduction = false;
 $cssFileName = 'style.css';
