@@ -8,7 +8,7 @@ class Validate
     private string $email;
     private bool $terms_accepted;
     public string $error = "";
-    private array $excluded_domains = ["Colombia" => "co", "Xeland" => "xe"];
+    private array $excluded_domains = ["Dolomia" => "do", "Xeland" => "xe"];
     private string $excluded_country;
 
     public function __construct($data)

@@ -26,7 +26,7 @@ app.component('call-to-action', {
             this.emailValid = regularExpression.test(this.email)
 
             const excludedDomains = {
-                'Colombia' : 'co',
+                'Dolomia' : 'do',
                 'Xeland' : 'xe'
             }
             const emailToArray = this.email.split(".")      // String to array by dot
