@@ -1,5 +1,5 @@
-# Magebit-Pineapple
- ## Web Developer Test - 2021
+# Newsletter
+## Subscription landing page
 
 Demo (landing page):
 https://interstellarcloud.space/newsletter/
