@@ -1,7 +1,7 @@
 <?php
 include('inc/header.php');
 require('vendor/autoload.php');
-use Pineapple\Controller\App;
+use Newsletter\Controller\App;
 ?>
         <div id="content">
 

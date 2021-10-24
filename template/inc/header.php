@@ -1,5 +1,5 @@
 <?php
-use Pineapple\Controller\App;
+use Newsletter\Controller\App;
 require('config/settings.php');
 $cssPath = App::getStyle($homeDir);
 ?>

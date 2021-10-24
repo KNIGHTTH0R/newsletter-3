@@ -1,6 +1,6 @@
 <?php
 
-namespace Pineapple\Model;
+namespace Newsletter\Model;
 
 use mysqli;
 

@@ -1,5 +1,5 @@
 <?php
-use Pineapple\Controller\App;
+use Newsletter\Controller\App;
 ?>
 <div class="success-image" <?= App::$successImageVisibility ?>></div>
 <div id="info">

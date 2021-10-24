@@ -1,6 +1,6 @@
 <?php
 
-use Pineapple\Model\Database;
+use Newsletter\Model\Database;
 
 require('config/settings.php');
 require('vendor/autoload.php');

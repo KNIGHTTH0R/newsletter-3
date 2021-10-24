@@ -1,7 +1,7 @@
 <?php
 
-use Pineapple\Controller\Route;
-use Pineapple\Controller\App;
+use Newsletter\Controller\Route;
+use Newsletter\Controller\App;
 
 require('vendor/autoload.php');
 require('config/settings.php');

@@ -1,9 +1,9 @@
 <?php
 
-namespace Pineapple\Controller;
+namespace Newsletter\Controller;
 
-use Pineapple\Model\Database;
-use Pineapple\Model\Validate;
+use Newsletter\Model\Database;
+use Newsletter\Model\Validate;
 
 class App
 {

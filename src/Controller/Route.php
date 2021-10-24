@@ -1,6 +1,6 @@
 <?php
 
-namespace Pineapple\Controller;
+namespace Newsletter\Controller;
 
 class Route
 {
