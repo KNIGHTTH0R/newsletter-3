@@ -1,7 +1,8 @@
 <?php
 
-use Newsletter\Controller\Route;
+
 use Newsletter\Controller\App;
+use Newsletter\Controller\Route;
 
 require('vendor/autoload.php');
 require('config/settings.php');
