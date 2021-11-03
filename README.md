@@ -59,11 +59,11 @@ $cssFileName = 'style.css';
 ```
 <?php
 
-$host = "127.0.0.1";
-$usr = "root";
+$host = "";
+$usr = "";
 $pwd = "";
-$db = "newsletter";
-$table = "emails";
+$db = "";
+$table = "";
 ```
 
 #### Project requires following .htaccess configuration
