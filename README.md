@@ -45,6 +45,8 @@ VALUES
 `/config/settings.php`
  
 ```
+<?php
+
 $homeDir = '/';        // Home directory. Examples: '/', '/home', '/welcome'
 $title = 'Welcome';
 $isProduction = false;
@@ -53,6 +55,16 @@ $cssFileName = 'style.css';
 #### Database connection parameters. 
 
 `/config/db.php`
+
+```
+<?php
+
+$host = "127.0.0.1";
+$usr = "root";
+$pwd = "";
+$db = "newsletter";
+$table = "emails";
+```
 
 #### Project requires following .htaccess configuration
 ```
