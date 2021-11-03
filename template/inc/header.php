@@ -13,4 +13,15 @@ $cssPath = App::getStyle($homeDir);
     <link href="<?= $cssPath; ?>" rel="stylesheet" />
     <link rel="icon" type="image/png" href="img/favicon.png" sizes="64x64">
     <title><?= $title; ?></title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C86LM1HMQC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-C86LM1HMQC');
+    </script>
+
 </head>
