@@ -15,7 +15,7 @@ if ($isProduction) {
     error_reporting(E_ALL);
 }
 
-$request = $_SERVER['REQUEST_URI'];
+$request = rtrim($_SERVER['REQUEST_URI'], "/");
 echo $request . '/admin';
 exit();
 
