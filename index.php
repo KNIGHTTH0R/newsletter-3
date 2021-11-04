@@ -16,9 +16,7 @@ if ($isProduction) {
 }
 
 $request = $_SERVER['REQUEST_URI'];
-echo $request;
-echo "<br>";
-echo $homeDir;
+echo $request . '/admin';
 exit();
 
 switch ($request) {
