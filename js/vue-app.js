@@ -75,8 +75,7 @@ app.component('call-to-action', {
                 method: 'post',
                 url: 'submit',
                 data: {
-                    email: email,
-                    terms: terms
+                    email: email
                 }
             });
         }

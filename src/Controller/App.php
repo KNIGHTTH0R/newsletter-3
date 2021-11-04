@@ -41,32 +41,46 @@ class App
         header('Location: ' . $uri);
     }
 
-    public static function submit($data, $fromVue)
+    public static function submit()
     {
-        require('config/db.php');
-        $db = new Database();
+            require('config/db.php');
+            $db = new Database();
 
-        $validate = new Validate($data);        // Send data for validation        
-        $result = $validate->validateForm();        // Start validation and save bool to variable
+            if (json_decode(file_get_contents('php://input'))) {        // Data from Vue app
+            
+                $data = json_decode(file_get_contents('php://input'), true);        // Get data from Axios POST
+                $db->insert($data['email']);
+                
+            } elseif (isset($_POST['email'])) {        // Data from PHP form        
+                
+                $data = $_POST;
+                $validate = new Validate($data);        // Send data for validation        
+                $result = $validate->validateForm();        // Start validation and save bool to variable
 
-            if ($result) {        // Save to database if validation successful
+                if ($result) {
 
-                if ($fromVue) {        // Data comes from Vue app - JavaScript enabled
                     $db->insert($data['email']);
-                } else {        // Data comes from HTML form - JavaScript disabled - Vue not available
-                    $db->insert($data['email']);
+
                     self::$successImageVisibility = 'visible';
                     self::$display_form = false;
                     self::$title = "Thanks for subscribing!";
                     self::$description = "You have successfully subscribed to our email listing.";
                     self::display('main');
-                }
+                
+                } else {        // Display validation error
+                 
+                    self::$message = $validate->error;
+                    self::$email = $data['email'];        // Save input field value  
+                    self::display('main');
 
-            } else {        // Display validation error
-                self::$message = $validate->error;
-                self::$email = $data['email'];        // Save input field value  
-                self::display('main');
+                }
+            
+            } else {
+
+                self::redirect('/');        // Redirect to home if no data posted
+
             }
+       
         
     }
 
