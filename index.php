@@ -1,8 +1,6 @@
 <?php
 
-
 use Newsletter\Controller\App;
-use Newsletter\Controller\Route;
 
 require('vendor/autoload.php');
 require('config/settings.php');
@@ -18,6 +16,8 @@ if ($isProduction) {
 }
 
 $request = $_SERVER['REQUEST_URI'];
+echo $request;
+exit();
 
 switch ($request) {
     case '' :
