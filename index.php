@@ -17,17 +17,19 @@ if ($isProduction) {
 
 $request = $_SERVER['REQUEST_URI'];
 echo $request;
+echo "<br>";
+echo $homeDir;
 exit();
 
 switch ($request) {
-    case '' :
-    case '/' :
+    case $homeDir:
+    case $homeDir . '/' :
         App::display('main');
         break;
-    case '/admin':
+    case $homeDir . '/admin':
         App::display('admin');
         break;
-    case '/submit':
+    case $homeDir . '/submit':
         App::submit();
         break;
     default:
