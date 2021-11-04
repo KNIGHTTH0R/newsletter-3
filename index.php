@@ -15,19 +15,17 @@ if ($isProduction) {
     error_reporting(E_ALL);
 }
 
-$request = rtrim($_SERVER['REQUEST_URI'], "/");
-echo $request . '/admin';
-exit();
+$request = trim($_SERVER['REQUEST_URI'], "/");    // Trim trailing slashes if exists
 
-switch ($request) {
+switch ($homeDir . $request) {
     case $homeDir:
-    case $homeDir . '/' :
+    case '/':
         App::display('main');
         break;
-    case $homeDir . '/admin':
+    case '/admin':
         App::display('admin');
         break;
-    case $homeDir . '/submit':
+    case '/submit':
         App::submit();
         break;
     default:
